@@ -1,5 +1,0 @@
-baseURL = "angyuang.github.io"
-languageCode = "en-us"
-title = "My New Hugo Site"
-publishDir = "docs"
-theme="hyde"
