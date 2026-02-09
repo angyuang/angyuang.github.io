@@ -1,0 +1,103 @@
+site_name: angyuang
+
+# 仓库链接相关设置
+repo_name: a171232886/Note_Python
+repo_url: https://github.com/a171232886/Note_Python
+
+nav:
+- k8s_docker:
+  - k8saa: k8s_docker/k8s_docker1.md
+  - k8sbbb: k8s_docker/k8s_docker2.md
+- study:
+  - rust:
+    - rust1: study/rust/rust1.md
+  - study2: study/study2.md
+  - a171232886/Note_Python: study/mkdocs_example.md
+  - sre: sre/运维自动化之anbile.md
+- ebook:
+  - ebook1: ebook/ebook1.md
+  - ebook2: ebook/ebook2.md
+- devops:
+  - devops1: devops/devops1.md
+  - devops2: devops/devops2.md
+
+theme:
+  name: material
+  # 图标设置
+  icon:
+    logo: material/home
+    repo: fontawesome/brands/git-alt
+  language: zh
+  features:
+    - navigation.instant          # 即时加载页面
+    - navigation.tabs             # 启用标签式导航
+    - navigation.tabs.sticky      # 粘性标签导航
+    - navigation.sections         # 启用分节导航
+    - navigation.expand           # 展开所有层级
+    - navigation.tracking         # URL 跟踪
+    - navigation.footer           # 启用页脚导航
+    - content.code.select         # 代码行选择按钮
+    - content.code.copy           # 代码复制按钮
+    - search.highlight            # 高亮搜索结果
+
+  # 亮暗模式设置
+  palette:
+    # Palette toggle for automatic mode
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default 
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to system preference
+
+copyright: Copyright &copy; 2026 - 2025 BeiJing     # 页脚版权信息
+extra:
+  generator: false      # 关闭底部的 MkDocs 生成标志
+
+# 插件设置
+plugins:
+  - search
+  - mkdocs-video:
+      is_video: True
+      video_muted: True
+      video_controls: True
+      css_style:
+        width: "50%"
+  - mkdocstrings:
+      handlers:
+        python:
+          paths: [src/code]
+          options:
+            members_order: source
+            docstring_style: google
+            show_root_heading: true         # 为顶级对象生成标题
+            show_symbol_type_heading: true  # 为不同类型doc生成类型标志(func,class,meth...)
+            show_source: false              # 不显示源码链接
+            separate_signature: True        # 将函数名与描述分开 
+
+markdown_extensions:
+  # 代码块显示效果设置
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+
+  # 扩展语法
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
