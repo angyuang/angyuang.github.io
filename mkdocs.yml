@@ -5,9 +5,9 @@ repo_name: a171232886/Note_Python
 repo_url: https://github.com/a171232886/Note_Python
 
 nav:
-- k8s_docker:
-  - k8saa: k8s_docker/k8s_docker1.md
-  - k8sbbb: k8s_docker/k8s_docker2.md
+- docker:
+  - k8saa: docker/k8s_docker1.md
+  - k8sbbb: docker/k8s_docker2.md
 - study:
   - rust:
     - rust1: study/rust/rust1.md
@@ -24,10 +24,21 @@ nav:
       - powerShell7从入门到精通: ebook/shell/PowerShell7learn.md
   -  tools:
       - excel公式与函数帮助手册: ebook/tools/excelfn.md
+      - mkdocs:
+        - 00入门MkDocs文档: ebook/tools/mkdocs/00入门MkDocs文档.md
+        - 01安装MkDocs文档: ebook/tools/mkdocs/01安装MkDocs文档.md
+        - 02编写文档MkDocs文档: ebook/tools/mkdocs/02编写文档MkDocs文档.md
+        - 03选择主题MkDocs文档: ebook/tools/mkdocs/03选择主题MkDocs文档.md
+        - 04自定义主题MkDocs文档: ebook/tools/mkdocs/04自定义主题MkDocs文档.md
+        - 05主题本地化MkDocs文档: ebook/tools/mkdocs/05主题本地化MkDocs文档.md
+        - 06配置MkDocs文档: ebook/tools/mkdocs/06配置MkDocs文档.md
+        - 07命令行界面MkDocs文档: ebook/tools/mkdocs/07命令行界面MkDocs文档.md
+        - 08部署您的文档MkDocs文档: ebook/tools/mkdocs/08部署您的文档MkDocs文档.md
 - devops:
   - devops1: devops/devops1.md
   - devops2: devops/devops2.md
-
+- sre:
+  - 运维自动化之anbile: sre/ansible/运维自动化之ansbile.md
 theme:
   name: material
   # 图标设置

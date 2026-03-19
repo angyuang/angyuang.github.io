@@ -2,14 +2,14 @@
 
 * * *
 
-需求[](#requirements "Permanent link")
+需求
 -------------------------------------
 
 MkDocs 需要您系统上安装的最新版本的 [Python](https://pythonlang.cn/) 和 Python 包管理器 [pip](https://pip.readthedocs.io/en/stable/installing/)。
 
 您可以从命令行检查是否已经安装了这些包。
 
-```null
+```shell
 $ python --version
 Python 3.8.2
 $ pip --version
@@ -18,7 +18,7 @@ pip 20.0.2 from /usr/local/lib/python3.8/site-packages/pip (python 3.8)
 
 如果您已经安装了这些包，您可以跳过到 [安装 MkDocs](#installing-mkdocs)。
 
-### 安装 Python[](#installing-python "Permanent link")
+### 安装 Python
 
 使用您选择的包管理器安装 [Python](https://pythonlang.cn/)，或者从 [python.org](https://pythonlang.cn/downloads/) 下载适用于您系统的安装程序并运行它。
 
@@ -28,32 +28,32 @@ pip 20.0.2 from /usr/local/lib/python3.8/site-packages/pip (python 3.8)
 
 ![](https://mkdocs.cn/img/win-py-install.png)
 
-### 安装 pip[](#installing-pip "Permanent link")
+### 安装 pip
 
 如果您使用的是最新版本的 Python，Python 包管理器 [pip](https://pip.readthedocs.io/en/stable/installing/) 很可能默认安装。但是，您可能需要将 pip 升级到最新版本。
 
-```null
+```shell
 pip install --upgrade pip
 ```
 
 如果您需要首次安装 pip，请下载 [get-pip.py](https://bootstrap.pypa.io/get-pip.py)。然后运行以下命令来安装它
 
-```null
+```shell
 python get-pip.py
 ```
 
-安装 MkDocs[](#installing-mkdocs "Permanent link")
+安装 MkDocs
 -------------------------------------------------
 
 使用 pip 安装 `mkdocs` 包
 
-```null
+```shell
 pip install mkdocs
 ```
 
 您现在应该在系统上安装了 `mkdocs` 命令。运行 `mkdocs --version` 检查一切是否正常工作。
 
-```null
+```shell
 $ mkdocs --version
 mkdocs, version 1.2.0 from /usr/local/lib/python3.8/site-packages/mkdocs (Python 3.8)
 ```
@@ -62,7 +62,7 @@ mkdocs, version 1.2.0 from /usr/local/lib/python3.8/site-packages/mkdocs (Python
 
 如果您想安装 MkDocs 的手册页，[click-man](https://github.com/click-contrib/click-man) 工具可以为您生成并安装它们。只需运行以下两个命令
 
-```null
+```shell
 pip install click-man
 click-man --target path/to/man/pages mkdocs
 ```
@@ -75,7 +75,7 @@ click-man --target path/to/man/pages mkdocs
 
 一个快速解决方案可能是用 `python -m` 作为前缀，例如
 
-```null
+```shell
 python -m pip install mkdocs
 python -m mkdocs
 ```

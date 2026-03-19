@@ -1,0 +1,3840 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../05%E4%B8%BB%E9%A2%98%E6%9C%AC%E5%9C%B0%E5%8C%96MkDocs%E6%96%87%E6%A1%A3/">
+      
+      
+        <link rel="next" href="../07%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%95%8C%E9%9D%A2MkDocs%E6%96%87%E6%A1%A3/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
+    
+    
+      
+        <title>06配置MkDocs文档 - angyuang</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../../.." title="angyuang" class="md-header__button md-logo" aria-label="angyuang" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            angyuang
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              06配置MkDocs文档
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/a171232886/Note_Python" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    a171232886/Note_Python
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../docker/k8s_docker1/" class="md-tabs__link">
+          
+  
+  
+  docker
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../study/rust/rust1/" class="md-tabs__link">
+          
+  
+  
+  study
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../../command/linuxcmd/" class="md-tabs__link">
+          
+  
+  
+  ebook
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../devops/devops1/" class="md-tabs__link">
+          
+  
+  
+  devops
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../sre/ansible/%E8%BF%90%E7%BB%B4%E8%87%AA%E5%8A%A8%E5%8C%96%E4%B9%8Bansbile/" class="md-tabs__link">
+          
+  
+  
+  sre
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="angyuang" class="md-nav__button md-logo" aria-label="angyuang" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+
+    </a>
+    angyuang
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/a171232886/Note_Python" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    a171232886/Note_Python
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    docker
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    docker
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../docker/k8s_docker1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    k8saa
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../docker/k8s_docker2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    k8sbbb
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    study
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    study
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    rust
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    rust
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../study/rust/rust1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    rust1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../study/study2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    study2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../study/mkdocs_example/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    a171232886/Note_Python
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../sre/运维自动化之anbile.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    sre
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ebook
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    ebook
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    command
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    command
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../command/linuxcmd/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    linux命令大全
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    program
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    program
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../program/program/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    编程语言rust
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../program/rustdocs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    rust文档网
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    shell
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    shell
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../shell/PowerShell7learn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    powerShell7从入门到精通
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    tools
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    tools
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../excelfn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    excel公式与函数帮助手册
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_4_2" id="__nav_3_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    mkdocs
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_4_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    mkdocs
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../00%E5%85%A5%E9%97%A8MkDocs%E6%96%87%E6%A1%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    00入门MkDocs文档
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01%E5%AE%89%E8%A3%85MkDocs%E6%96%87%E6%A1%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01安装MkDocs文档
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02%E7%BC%96%E5%86%99%E6%96%87%E6%A1%A3MkDocs%E6%96%87%E6%A1%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02编写文档MkDocs文档
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03%E9%80%89%E6%8B%A9%E4%B8%BB%E9%A2%98MkDocs%E6%96%87%E6%A1%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03选择主题MkDocs文档
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04%E8%87%AA%E5%AE%9A%E4%B9%89%E4%B8%BB%E9%A2%98MkDocs%E6%96%87%E6%A1%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04自定义主题MkDocs文档
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05%E4%B8%BB%E9%A2%98%E6%9C%AC%E5%9C%B0%E5%8C%96MkDocs%E6%96%87%E6%A1%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05主题本地化MkDocs文档
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06配置MkDocs文档
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06配置MkDocs文档
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        介绍
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        项目信息
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="项目信息">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#site_name" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        site_name
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#site_url" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        site_url
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#repo_url" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        repo_url
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#repo_name" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        repo_name
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#edit_uri" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        edit_uri
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#edit_uri_template" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        edit_uri_template
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#site_description" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        site_description
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#copyright" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        copyright
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remote_branch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        remote_branch
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remote_name" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        remote_name
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        文档布局
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="文档布局">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nav" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        nav
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exclude_docs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        exclude_docs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#draft_docs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        draft_docs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#not_in_nav" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        not_in_nav
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        validation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        构建目录
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="构建目录">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        主题
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="主题">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        名称
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        区域设置
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom_dir" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        custom_dir
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#static_templates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        static_templates
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        （主题特定关键字）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docs_dir" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        docs_dir
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#site_dir" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        site_dir
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        预览控件
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        实时重新加载
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="实时重新加载">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#watch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        watch
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use_directory_urls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        use_directory_urls
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strict" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        strict
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dev_addr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dev_addr
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        格式选项
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="格式选项">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#markdown_extensions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        markdown_extensions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        hooks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plugins" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        plugins
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="plugins">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enabled" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        enabled 选项
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        替代语法
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#search" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Search
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Search">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#separator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        separator
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#min_search_length" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        min_search_length
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lang" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        lang
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prebuild_index" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        prebuild_index
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#indexing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        indexing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="indexing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        选项
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        环境变量
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        相对于当前文件或站点的路径
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        配置继承
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%95%8C%E9%9D%A2MkDocs%E6%96%87%E6%A1%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    07命令行界面MkDocs文档
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08%E9%83%A8%E7%BD%B2%E6%82%A8%E7%9A%84%E6%96%87%E6%A1%A3MkDocs%E6%96%87%E6%A1%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    08部署您的文档MkDocs文档
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    devops
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    devops
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../devops/devops1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    devops1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../devops/devops2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    devops2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    sre
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    sre
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../sre/ansible/%E8%BF%90%E7%BB%B4%E8%87%AA%E5%8A%A8%E5%8C%96%E4%B9%8Bansbile/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    运维自动化之anbile
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        介绍
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        项目信息
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="项目信息">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#site_name" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        site_name
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#site_url" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        site_url
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#repo_url" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        repo_url
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#repo_name" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        repo_name
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#edit_uri" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        edit_uri
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#edit_uri_template" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        edit_uri_template
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#site_description" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        site_description
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#copyright" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        copyright
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remote_branch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        remote_branch
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remote_name" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        remote_name
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        文档布局
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="文档布局">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nav" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        nav
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exclude_docs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        exclude_docs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#draft_docs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        draft_docs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#not_in_nav" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        not_in_nav
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        validation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        构建目录
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="构建目录">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        主题
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="主题">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        名称
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        区域设置
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom_dir" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        custom_dir
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#static_templates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        static_templates
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        （主题特定关键字）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docs_dir" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        docs_dir
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#site_dir" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        site_dir
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        预览控件
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        实时重新加载
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="实时重新加载">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#watch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        watch
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use_directory_urls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        use_directory_urls
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strict" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        strict
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dev_addr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dev_addr
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        格式选项
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="格式选项">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#markdown_extensions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        markdown_extensions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        hooks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plugins" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        plugins
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="plugins">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enabled" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        enabled 选项
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        替代语法
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#search" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Search
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Search">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#separator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        separator
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#min_search_length" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        min_search_length
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lang" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        lang
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prebuild_index" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        prebuild_index
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#indexing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        indexing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="indexing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        选项
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        环境变量
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        相对于当前文件或站点的路径
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        配置继承
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+  <h1>06配置MkDocs文档</h1>
+
+<div><p>所有可用配置设置的指南。</p>
+<hr>
+<h2 id="_1">介绍</h2>
+<p>默认情况下，项目设置使用项目目录中名为 <code>mkdocs.yml</code> 的 YAML 配置文件进行配置。您可以使用 <code>-f</code>/<code>--config-file</code> 选项指定另一个路径（请参见 <code>mkdocs build --help</code>）。</p>
+<p>至少，此配置文件必须包含 <code>site_name</code>。所有其他设置都是可选的。</p>
+<h2 id="_2">项目信息</h2>
+<h3 id="site_name">site_name</h3>
+<p>这是一个 **必需设置**，它应该是一个字符串，用作项目文档的主要标题。例如</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>site_name:<span class="w"> </span>Marshmallow<span class="w"> </span>Generator
+</span></code></pre></div>
+<p>渲染主题时，此设置将作为 <code>site_name</code> 上下文变量传递。</p>
+<h3 id="site_url">site_url</h3>
+<p>设置站点的规范 URL。这将在每个 HTML 页面 <code>head</code> 部分添加一个包含 <code>canonical</code> URL 的 <code>link</code> 标签。如果 MkDocs 网站的“根”位于域名的子目录内，请确保在设置中包含该子目录（<code>https://example.com/foo/</code>）。</p>
+<p>此设置也用于 <code>mkdocs serve</code>：服务器将被挂载到从 URL 的路径组件获取的路径上，例如，<code>some/page.md</code> 将从 <code>http://127.0.0.1:8000/foo/some/page/</code> 提供服务，以模仿预期的远程布局。</p>
+<p>**默认值**：<code>null</code></p>
+<h3 id="repo_url">repo_url</h3>
+<p>设置后，将在每个页面上提供指向您的存储库（GitHub、Bitbucket、GitLab 等）的链接。</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>repo_url:<span class="w"> </span>https://github.com/example/repository/
+</span></code></pre></div>
+<p>**默认值**：<code>null</code></p>
+<h3 id="repo_name">repo_name</h3>
+<p>设置后，将在每个页面上提供指向您的存储库的链接的名称。</p>
+<p>**默认值**：如果 <code>repo_url</code> 与这些域名匹配，则为 <code>'GitHub'</code>、<code>'Bitbucket'</code> 或 <code>'GitLab'</code>，否则为 <code>repo_url</code> 中的域名。</p>
+<h3 id="edit_uri">edit_uri</h3>
+<p>从基本 <code>repo_url</code> 到直接查看页面时文档目录的路径，考虑存储库主机（例如 GitHub、Bitbucket 等）、分支和文档目录本身的具体情况。MkDocs 会连接 <code>repo_url</code> 和 <code>edit_uri</code>，并将页面的输入路径附加到后面。</p>
+<p>设置后，如果您的主题支持，将提供一个指向源存储库中页面的直接链接。这使得更容易找到和编辑页面的源代码。如果未设置 <code>repo_url</code>，则会忽略此选项。在某些主题中，设置此选项可能会导致编辑链接用于代替存储库链接。其他主题可能会显示两个链接。</p>
+<p><code>edit_uri</code> 支持查询（'?'）和片段（'#'）字符。对于使用查询或片段来访问文件的存储库主机，<code>edit_uri</code> 可能会如下设置。（请注意 URI 中的 <code>?</code> 和 <code>#</code>...）</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>edit_uri:<span class="w"> </span><span class="s1">'?query=root/path/docs/'</span>
+</span></code></pre></div>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>edit_uri:<span class="w"> </span><span class="s1">'#root/path/docs/'</span>
+</span></code></pre></div>
+<p>对于其他存储库主机，只需指定文档目录的相对路径。</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>edit_uri:<span class="w"> </span>root/path/docs/
+</span></code></pre></div>
+<p>例如，具有以下配置</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>repo_url:<span class="w"> </span>https://example.com/project/repo
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>edit_uri:<span class="w"> </span>blob/main/docs/
+</span></code></pre></div>
+<p>意味着名为 'foo/bar.md' 的页面将具有指向以下位置的编辑链接<br>
+<a href="https://example.com/project/repo/blob/main/docs/foo/bar.md">https://example.com/project/repo/blob/main/docs/foo/bar.md</a></p>
+<p><code>edit_uri</code> 实际上可以是一个绝对 URL，不一定相对于 <code>repo_url</code>，因此可以达到相同的效果</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>edit_uri:<span class="w"> </span>https://example.com/project/repo/blob/main/docs/
+</span></code></pre></div>
+<p>要获得更多灵活性，请参阅下面的 <a href="#edit_uri_template">edit_uri_template</a>。</p>
+<p>注意</p>
+<p>在一些已知的托管网站（特别是 GitHub、Bitbucket 和 GitLab）上，<code>edit_uri</code> 是从 'repo_url' 派生的，不需要手动设置。只需定义一个 <code>repo_url</code> 就会自动填充 <code>edit_uri</code> 配置设置。</p>
+<p>例如，对于 GitHub 或 GitLab 托管的存储库，<code>edit_uri</code> 将自动设置为 <code>edit/master/docs/</code>（请注意 <code>edit</code> 路径和 <code>master</code> 分支）。</p>
+<p>对于 Bitbucket 托管的存储库，等效的 <code>edit_uri</code> 将自动设置为 <code>src/default/docs/</code>（请注意 <code>src</code> 路径和 <code>default</code> 分支）。</p>
+<p>要使用与默认设置不同的 URI（例如不同的分支），只需将 <code>edit_uri</code> 设置为您想要的字符串。如果您不想在页面上显示任何“编辑 URL 链接”，请将 <code>edit_uri</code> 设置为空字符串以禁用自动设置。</p>
+<p>警告</p>
+<p>在 GitHub 和 GitLab 上，默认的“编辑”路径（<code>edit/master/docs/</code>）会在在线编辑器中打开页面。此功能要求用户拥有并登录到 GitHub/GitLab 帐户。否则，用户将被重定向到登录/注册页面。或者，使用“blob”路径（<code>blob/master/docs/</code>）打开只读视图，该视图支持匿名访问。</p>
+<p>**默认值**：如果 <code>repo_url</code> 与这些域名匹配，则对于 GitHub 和 GitLab 存储库为 <code>edit/master/docs/</code>，对于 Bitbucket 存储库为 <code>src/default/docs/</code>，否则为 <code>null</code></p>
+<h3 id="edit_uri_template">edit_uri_template</h3>
+<p><a href="#edit_uri">edit_uri</a> 的更灵活的变体。这两个是等效的</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>edit_uri:<span class="w"> </span><span class="s1">'blob/main/docs/'</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>edit_uri_template:<span class="w"> </span><span class="s1">'blob/main/docs/{path}'</span>
+</span></code></pre></div>
+<p>（它们也是互斥的——不要同时指定两者）。</p>
+<p>从这里开始，您可以更改路径的位置或格式，以防默认的附加路径行为不够。</p>
+<p><code>edit_uri_template</code> 的内容是正常的 <a href="https://docs.pythonlang.cn/3/library/string.html#formatstrings">Python 格式字符串</a>，只有以下字段可用</p>
+<ul>
+<li><code>{path}</code>，例如 <code>foo/bar.md</code></li>
+<li><code>{path_noext}</code>，例如 <code>foo/bar</code></li>
+</ul>
+<p>转换标志 <code>!q</code> 可用，用于对字段进行百分比编码</p>
+<ul>
+<li><code>{path!q}</code>，例如 <code>foo%2Fbar.md</code></li>
+</ul>
+<p>建议的实用配置</p>
+<ul>
+<li>
+<p>GitHub Wiki<br>
+    （例如 <code>https://github.com/project/repo/wiki/foo/bar/_edit</code>）</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>repo_url:<span class="w"> </span><span class="s1">'https://github.com/project/repo/wiki'</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>edit_uri_template:<span class="w"> </span><span class="s1">'{path_noext}/_edit'</span>
+</span></code></pre></div>
+</li>
+<li>
+<p>BitBucket 编辑器<br>
+    （例如 <code>https://bitbucket.org/project/repo/src/master/docs/foo/bar.md?mode=edit</code>）</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>repo_url:<span class="w"> </span><span class="s1">'https://bitbucket.org/project/repo/'</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>edit_uri_template:<span class="w"> </span><span class="s1">'src/master/docs/{path}?mode=edit'</span>
+</span></code></pre></div>
+</li>
+<li>
+<p>GitLab 静态站点编辑器<br>
+    （例如 <code>https://gitlab.com/project/repo/-/sse/master/docs%2Ffoo%2bar.md</code>）</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>repo_url:<span class="w"> </span><span class="s1">'https://gitlab.com/project/repo'</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>edit_uri_template:<span class="w"> </span><span class="s1">'-/sse/master/docs%2F{path!q}'</span>
+</span></code></pre></div>
+</li>
+<li>
+<p>GitLab Web IDE<br>
+    （例如 <code>https://gitlab.com/-/ide/project/repo/edit/master/-/docs/foo/bar.md</code>）</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>edit_uri_template:<span class="w"> </span><span class="s1">'https://gitlab.com/-/ide/project/repo/edit/master/-/docs/{path}'</span>
+</span></code></pre></div>
+</li>
+</ul>
+<p>**默认值**：<code>null</code></p>
+<h3 id="site_description">site_description</h3>
+<p>设置站点描述。这将在生成的 HTML 头部添加一个元标签。</p>
+<p>**默认值**：<code>null</code></p>
+<p>设置作者姓名。这将在生成的 HTML 头部添加一个元标签。</p>
+<p>**默认值**：<code>null</code></p>
+<h3 id="copyright">copyright</h3>
+<p>设置要由主题包含在文档中的版权信息。</p>
+<p>**默认值**：<code>null</code></p>
+<h3 id="remote_branch">remote_branch</h3>
+<p>使用 <code>gh-deploy</code> 部署到 GitHub Pages 时，设置要提交到的远程分支。此选项可以被 <code>gh-deploy</code> 中的命令行选项覆盖。</p>
+<p>**默认值**：<code>gh-pages</code></p>
+<h3 id="remote_name">remote_name</h3>
+<p>使用 <code>gh-deploy</code> 部署到 GitHub Pages 时，设置要推送到远程的名称。此选项可以被 <code>gh-deploy</code> 中的命令行选项覆盖。</p>
+<p>**默认值**：<code>origin</code></p>
+<h2 id="_3">文档布局</h2>
+<h3 id="nav">nav</h3>
+<p>此设置用于确定网站全局导航的格式和布局。最小的导航配置可能如下所示</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>nav:
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">  </span>-<span class="w"> </span><span class="s1">'index.md'</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">  </span>-<span class="w"> </span><span class="s1">'about.md'</span>
+</span></code></pre></div>
+<p>导航配置中的所有路径都必须相对于 <a href="#docs_dir"><code>docs_dir</code></a> 配置选项。有关更详细的分解（包括如何创建子部分），请参阅有关 <a href="https://mkdocs.cn/user-guide/writing-your-docs/#configure-pages-and-navigation">配置页面和导航</a> 的部分。</p>
+<p>导航项目也可以包含指向外部网站的链接。虽然内部链接的标题是可选的，但外部链接的标题是必需的。外部链接可以是完整的 URL 或相对 URL。在文件中找不到的任何路径都被认为是外部链接。请参阅有关 <a href="https://mkdocs.cn/user-guide/writing-your-docs/#meta-data">元数据</a> 的部分，了解 MkDocs 如何确定文档的页面标题。</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>nav:
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">  </span>-<span class="w"> </span>Introduction:<span class="w"> </span><span class="s1">'index.md'</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">  </span>-<span class="w"> </span><span class="s1">'about.md'</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="w">  </span>-<span class="w"> </span><span class="s1">'Issue Tracker'</span>:<span class="w"> </span><span class="s1">'https://example.com/'</span>
+</span></code></pre></div>
+<p>在上面的示例中，前两个项目指向本地文件，而第三个项目指向外部网站。</p>
+<p>但是，有时 MkDocs 网站托管在项目网站的子目录中，您可能希望链接到同一网站的其他部分而不包含完整的域名。在这种情况下，您可以使用适当的相对 URL。</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>site_url:<span class="w"> </span>https://example.com/foo/
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>nav:
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="w">  </span>-<span class="w"> </span>Home:<span class="w"> </span><span class="s1">'../'</span>
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="w">  </span>-<span class="w"> </span><span class="s1">'User Guide'</span>:<span class="w"> </span><span class="s1">'user-guide.md'</span>
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="w">  </span>-<span class="w"> </span><span class="s1">'Bug Tracker'</span>:<span class="w"> </span><span class="s1">'/bugs/'</span>
+</span></code></pre></div>
+<p>在上面的示例中，使用了两种不同的外部链接样式。首先，请注意 <code>site_url</code> 指示 MkDocs 网站托管在域名的 <code>/foo/</code> 子目录中。因此，“主页”导航项目是一个相对链接，它向上移动一级到服务器根目录，实际上指向 <code>https://example.com/</code>。“Bug 跟踪器”项目使用服务器根目录的绝对路径，实际上指向 <code>https://example.com/bugs/</code>。当然，“用户指南”指向本地 MkDocs 页面。</p>
+<p>**默认值**：默认情况下，<code>nav</code> 将包含在 <code>docs_dir</code> 及其子目录中找到的所有 Markdown 文件的字母数字排序的嵌套列表。索引文件将在子部分中始终首先列出。</p>
+<h3 id="exclude_docs">exclude_docs</h3>
+<p>1.5 版新增</p>
+<p>1.6 版已更改</p>
+<p>此配置不再应用 <code>mkdocs serve</code> 的“草稿”功能。如果您有希望在“serve”中可用但不在“build”中可用的草稿文档，请将 <code>exclude_docs</code> 替换为新的 <a href="#draft_docs"><code>draft_docs</code></a> 配置选项。</p>
+<p>此配置定义了不应被提取到构建站点中的文件（在 <a href="#docs_dir"><code>docs_dir</code></a> 下）的模式。</p>
+<p>示例</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>exclude_docs:<span class="w"> </span><span class="p">|</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="w">  </span>api-config.json<span class="w">    </span><span class="c1"># A file with this name anywhere.</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="w">  </span>/requirements.txt<span class="w">  </span><span class="c1"># Top-level "docs/requirements.txt".</span>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="w">  </span>*.py<span class="w">               </span><span class="c1"># Any file with this extension anywhere.</span>
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="w">  </span>!/foo/example.py<span class="w">   </span><span class="c1"># But keep this particular file.</span>
+</span></code></pre></div>
+<p>这遵循 <a href="https://git-scm.cn/docs/gitignore#_pattern_format">.gitignore 模式格式</a>。</p>
+<p>以下默认值始终隐式预先附加 - 排除点文件（和目录）以及顶层 <code>templates</code> 目录</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>exclude_docs:<span class="w"> </span><span class="p">|</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="w">  </span>.*
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="w">  </span>/templates/
+</span></code></pre></div>
+<p>因此，为了真正从头开始此配置，您需要首先指定这些条目的否定版本。</p>
+<p>否则，您可以例如选择将某些点文件重新包含到站点中</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>exclude_docs:<span class="w"> </span><span class="p">|</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="w">  </span>!.assets<span class="w">  </span>
+</span></code></pre></div>
+<h3 id="draft_docs">draft_docs</h3>
+<p>1.6 版新增</p>
+<p>此配置定义了被视为草稿的文件（在 <a href="#docs_dir"><code>docs_dir</code></a> 下）的模式。草稿文件在 <code>mkdocs serve</code> 期间可用，并包含“DRAFT”标记，但不会包含在构建中。要防止这种影响并使“serve”的行为与“build”相同，您可以运行 <code>mkdocs serve --clean</code>。</p>
+<p>示例</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>draft_docs:<span class="w"> </span><span class="p">|</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="w">  </span>drafts/<span class="w">               </span><span class="c1"># A "drafts" directory anywhere.</span>
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="w">  </span>_unpublished.md<span class="w">       </span><span class="c1"># A md file ending in _unpublished.md</span>
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="w">  </span>!/foo_unpublished.md<span class="w">  </span><span class="c1"># But keep this particular file.</span>
+</span></code></pre></div>
+<p>这遵循 <a href="https://git-scm.cn/docs/gitignore#_pattern_format">.gitignore 模式格式</a>。</p>
+<h3 id="not_in_nav">not_in_nav</h3>
+<p>1.5 版新增</p>
+<p>1.6 版新增</p>
+<p>如果完全没有指定 <a href="#nav"><code>nav</code></a> 配置，则此配置中指定的页面现在将从推断的导航中排除。</p>
+<p>如果您想将一些文档包含到站点中，但有意将其从导航中排除，通常 MkDocs 会对此发出警告。</p>
+<p>将这些文件模式（相对于 <a href="#docs_dir"><code>docs_dir</code></a>）添加到 <code>not_in_nav</code> 配置中将阻止此类警告。</p>
+<p>示例</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>nav:
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="w">  </span>-<span class="w"> </span>Foo:<span class="w"> </span>foo.md
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="w">  </span>-<span class="w"> </span>Bar:<span class="w"> </span>bar.md
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>
+</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>not_in_nav:<span class="w"> </span><span class="p">|</span>
+</span><span id="__span-19-6"><a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a><span class="w">  </span>/private.md
+</span></code></pre></div>
+<p>与前面的选项一样，这遵循 .gitignore 模式格式。</p>
+<h3 id="validation">validation</h3>
+<p>1.5 版新增</p>
+<p>配置 MkDocs 在验证文档链接时诊断消息的严格程度。</p>
+<p>这是一个配置树，每个配置的值可以是以下三种之一：<code>warn</code>、<code>info</code>、<code>ignore</code>。它们会导致生成相应严重级别的日志消息。<code>warn</code>级别当然是为了在使用<code>mkdocs build --strict</code>（在这种情况下它会成为错误）时使用，您可以在持续测试中使用它。</p>
+<p>配置<code>validation.links.absolute_links</code>还具有一个特殊值<code>relative_to_docs</code>，用于<a href="#validation-of-absolute-links">验证绝对链接</a>。</p>
+<p>MkDocs 1.6 版本中的此配置默认值```shell
+validation:
+  nav:
+    omitted_files: info
+    not_found: warn
+    absolute_links: info
+  links:
+    not_found: warn
+    anchors: info
+    absolute_links: info
+    unrecognized_links: info
+</p><div class="language-text highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>（注意：你不应该复制整个示例，因为它只是重复了默认值。只应该设置与默认值不同的单个项目。）
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>一些行为的默认值已经与 MkDocs 1.4 及更低版本不同——它们以前会被忽略。
+</span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>
+</span><span id="__span-20-5"><a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>配置 MkDocs 1.6 使其行为与 MkDocs 1.4 及更低版本相同（降低严格度）```shell
+</span><span id="__span-20-6"><a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a>validation:
+</span><span id="__span-20-7"><a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a>  absolute_links: ignore
+</span><span id="__span-20-8"><a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a>  unrecognized_links: ignore
+</span><span id="__span-20-9"><a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a>  anchors: ignore
+</span></code></pre></div>
+<p>大多数网站的推荐设置（最大严格度）```shell
+validation:
+  omitted_files: warn
+  absolute_links: warn<br>
+  unrecognized_links: warn
+  anchors: warn<br>
+</p><div class="language-text highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>注意，在上面的示例中，我们省略了“nav”和“links”键。这里的`absolute_links:`表示设置`nav: absolute_links:`和`links: absolute_links:`。
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>所有值的完整列表以及可以隐藏或使它们更突出的日志消息示例
+</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>
+</span><span id="__span-21-5"><a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a>*   `validation.nav.omitted_files`
+</span><span id="__span-21-6"><a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a>    *   &gt; 以下页面存在于 docs 目录中，但未包含在“nav”配置中：...
+</span><span id="__span-21-7"><a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a>
+</span><span id="__span-21-8"><a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a>*   `validation.nav.not_found`
+</span><span id="__span-21-9"><a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a>    *   &gt; 在“nav”配置中包含一个指向“foo/bar.md”的引用，但文档文件中未找到该引用。
+</span><span id="__span-21-10"><a id="__codelineno-21-10" name="__codelineno-21-10" href="#__codelineno-21-10"></a>
+</span><span id="__span-21-11"><a id="__codelineno-21-11" name="__codelineno-21-11" href="#__codelineno-21-11"></a>    *   &gt; 在“nav”配置中包含一个指向“foo/bar.md”的引用，但此文件已从构建的站点中排除。
+</span><span id="__span-21-12"><a id="__codelineno-21-12" name="__codelineno-21-12" href="#__codelineno-21-12"></a>
+</span><span id="__span-21-13"><a id="__codelineno-21-13" name="__codelineno-21-13" href="#__codelineno-21-13"></a>*   `validation.nav.absolute_links`
+</span><span id="__span-21-14"><a id="__codelineno-21-14" name="__codelineno-21-14" href="#__codelineno-21-14"></a>    *   &gt; 在“nav”配置中包含一个指向“/foo/bar.html”的绝对路径，它可能指向一个外部资源。
+</span><span id="__span-21-15"><a id="__codelineno-21-15" name="__codelineno-21-15" href="#__codelineno-21-15"></a>
+</span><span id="__span-21-16"><a id="__codelineno-21-16" name="__codelineno-21-16" href="#__codelineno-21-16"></a>
+</span><span id="__span-21-17"><a id="__codelineno-21-17" name="__codelineno-21-17" href="#__codelineno-21-17"></a>*   `validation.links.not_found`
+</span><span id="__span-21-18"><a id="__codelineno-21-18" name="__codelineno-21-18" href="#__codelineno-21-18"></a>    *   &gt; 文档文件“example.md”包含一个指向“../foo/bar.md”的链接，但目标文件未在文档文件中找到。
+</span><span id="__span-21-19"><a id="__codelineno-21-19" name="__codelineno-21-19" href="#__codelineno-21-19"></a>
+</span><span id="__span-21-20"><a id="__codelineno-21-20" name="__codelineno-21-20" href="#__codelineno-21-20"></a>    *   &gt; 文档文件“example.md”包含一个指向“foo/bar.md”的链接，但该文件已从构建的站点中排除。
+</span><span id="__span-21-21"><a id="__codelineno-21-21" name="__codelineno-21-21" href="#__codelineno-21-21"></a>
+</span><span id="__span-21-22"><a id="__codelineno-21-22" name="__codelineno-21-22" href="#__codelineno-21-22"></a>*   `validation.links.anchors`
+</span><span id="__span-21-23"><a id="__codelineno-21-23" name="__codelineno-21-23" href="#__codelineno-21-23"></a>    *   &gt; 文档文件“example.md”包含一个指向“../foo/bar.md#some-heading”的链接，但文档“foo/bar.md”不包含锚点“#some-heading”。
+</span><span id="__span-21-24"><a id="__codelineno-21-24" name="__codelineno-21-24" href="#__codelineno-21-24"></a>
+</span><span id="__span-21-25"><a id="__codelineno-21-25" name="__codelineno-21-25" href="#__codelineno-21-25"></a>    *   &gt; 文档文件“example.md”包含一个指向“#some-heading”的链接，但此页面上没有这样的锚点。
+</span><span id="__span-21-26"><a id="__codelineno-21-26" name="__codelineno-21-26" href="#__codelineno-21-26"></a>
+</span><span id="__span-21-27"><a id="__codelineno-21-27" name="__codelineno-21-27" href="#__codelineno-21-27"></a>*   `validation.links.absolute_links`
+</span><span id="__span-21-28"><a id="__codelineno-21-28" name="__codelineno-21-28" href="#__codelineno-21-28"></a>    *   &gt; 文档文件“example.md”包含一个绝对链接“/foo/bar.html”，它保持不变。你是否想要使用“foo/bar.md”？
+</span><span id="__span-21-29"><a id="__codelineno-21-29" name="__codelineno-21-29" href="#__codelineno-21-29"></a>
+</span><span id="__span-21-30"><a id="__codelineno-21-30" name="__codelineno-21-30" href="#__codelineno-21-30"></a>*   `validation.links.unrecognized_links`
+</span><span id="__span-21-31"><a id="__codelineno-21-31" name="__codelineno-21-31" href="#__codelineno-21-31"></a>    *   &gt; 文档文件“example.md”包含一个无法识别的相对链接“../foo/bar/”，它保持不变。你是否想要使用“foo/bar.md”？
+</span><span id="__span-21-32"><a id="__codelineno-21-32" name="__codelineno-21-32" href="#__codelineno-21-32"></a>
+</span><span id="__span-21-33"><a id="__codelineno-21-33" name="__codelineno-21-33" href="#__codelineno-21-33"></a>    *   &gt; 文档文件“example.md”包含一个无法识别的相对链接“mail@example.com”，它保持不变。你是否想要使用“mailto:mail@example.com”？
+</span><span id="__span-21-34"><a id="__codelineno-21-34" name="__codelineno-21-34" href="#__codelineno-21-34"></a>
+</span><span id="__span-21-35"><a id="__codelineno-21-35" name="__codelineno-21-35" href="#__codelineno-21-35"></a>
+</span><span id="__span-21-36"><a id="__codelineno-21-36" name="__codelineno-21-36" href="#__codelineno-21-36"></a>#### 验证绝对链接
+</span><span id="__span-21-37"><a id="__codelineno-21-37" name="__codelineno-21-37" href="#__codelineno-21-37"></a>
+</span><span id="__span-21-38"><a id="__codelineno-21-38" name="__codelineno-21-38" href="#__codelineno-21-38"></a>1.6 版新增
+</span><span id="__span-21-39"><a id="__codelineno-21-39" name="__codelineno-21-39" href="#__codelineno-21-39"></a>
+</span><span id="__span-21-40"><a id="__codelineno-21-40" name="__codelineno-21-40" href="#__codelineno-21-40"></a>&gt; 从历史上看，在 Markdown 中，MkDocs 只识别指向另一个物理`*.md`文档（或媒体文件）的**相对**链接。这是一个很好的约定，因为这样源页面也可以在没有 MkDocs 的情况下自由浏览，例如在 GitHub 上。而绝对链接则保持不变（通常无法按预期工作）或，更近期的做法是，发出警告。如果你不喜欢总是使用相对链接，现在你可以选择使用绝对链接，并使它们正常工作。
+</span><span id="__span-21-41"><a id="__codelineno-21-41" name="__codelineno-21-41" href="#__codelineno-21-41"></a>
+</span><span id="__span-21-42"><a id="__codelineno-21-42" name="__codelineno-21-42" href="#__codelineno-21-42"></a>如果你将设置`validation.links.absolute_links`设置为新值`relative_to_docs`，所有以`/`开头的 Markdown 链接都将被理解为相对于`docs_dir`根目录。然后，将根据之前 MkDocs 版本中对相对链接有效的其他所有规则验证链接是否正确。对于 HTML 输出，这些链接仍将被转换为相对链接，以便站点仍然可靠地工作。
+</span><span id="__span-21-43"><a id="__codelineno-21-43" name="__codelineno-21-43" href="#__codelineno-21-43"></a>
+</span><span id="__span-21-44"><a id="__codelineno-21-44" name="__codelineno-21-44" href="#__codelineno-21-44"></a>因此，现在任何文档（例如“dir1/foo.md”）都可以使用`[link](/dir2/bar.md)`链接到文档“dir2/bar.md”，除了之前唯一正确的方式`[link](../dir2/bar.md)`。
+</span><span id="__span-21-45"><a id="__codelineno-21-45" name="__codelineno-21-45" href="#__codelineno-21-45"></a>
+</span><span id="__span-21-46"><a id="__codelineno-21-46" name="__codelineno-21-46" href="#__codelineno-21-46"></a>但是，您必须启用该设置。默认情况下，链接仍然会被跳过。
+</span><span id="__span-21-47"><a id="__codelineno-21-47" name="__codelineno-21-47" href="#__codelineno-21-47"></a>
+</span><span id="__span-21-48"><a id="__codelineno-21-48" name="__codelineno-21-48" href="#__codelineno-21-48"></a>识别绝对链接并验证它们的设置
+</span><span id="__span-21-49"><a id="__codelineno-21-49" name="__codelineno-21-49" href="#__codelineno-21-49"></a>
+</span><span id="__span-21-50"><a id="__codelineno-21-50" name="__codelineno-21-50" href="#__codelineno-21-50"></a>```shell
+</span><span id="__span-21-51"><a id="__codelineno-21-51" name="__codelineno-21-51" href="#__codelineno-21-51"></a>validation:
+</span><span id="__span-21-52"><a id="__codelineno-21-52" name="__codelineno-21-52" href="#__codelineno-21-52"></a>  links:
+</span><span id="__span-21-53"><a id="__codelineno-21-53" name="__codelineno-21-53" href="#__codelineno-21-53"></a>    absolute_links: relative_to_docs
+</span><span id="__span-21-54"><a id="__codelineno-21-54" name="__codelineno-21-54" href="#__codelineno-21-54"></a>    anchors: warn
+</span><span id="__span-21-55"><a id="__codelineno-21-55" name="__codelineno-21-55" href="#__codelineno-21-55"></a>    unrecognized_links: warn
+</span></code></pre></div>
+<h2 id="_4">构建目录</h2>
+<h3 id="_5">主题</h3>
+<p>设置文档网站的主题和主题特定配置。可以是字符串或一组键值对。</p>
+<p>如果为字符串，则它必须是已知已安装主题的字符串名称。要查看可用主题列表，请访问<a href="https://mkdocs.cn/user-guide/choosing-your-theme/">选择您的主题</a>。</p>
+<p>一组键值对的示例可能如下所示</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>theme:
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="w">  </span>name:<span class="w"> </span>mkdocs
+</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="w">  </span>locale:<span class="w"> </span>en
+</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="w">  </span>custom_dir:<span class="w"> </span>my_theme_customizations/
+</span><span id="__span-22-5"><a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a><span class="w">  </span>static_templates:
+</span><span id="__span-22-6"><a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a><span class="w">    </span>-<span class="w"> </span>sitemap.html
+</span><span id="__span-22-7"><a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a><span class="w">  </span>include_sidebar:<span class="w"> </span><span class="nb">false</span>
+</span></code></pre></div>
+<p>如果为一组键值对，则可以定义以下嵌套键</p>
+<p>块</p>
+<h4 id="_6">名称</h4>
+<p>已知已安装主题的字符串名称。要查看可用主题列表，请访问<a href="https://mkdocs.cn/user-guide/choosing-your-theme/">选择您的主题</a>。</p>
+<h4 id="_7">区域设置</h4>
+<p>表示您网站语言的代码。有关详细信息，请参阅<a href="https://mkdocs.cn/user-guide/localizing-your-theme/">本地化您的主题</a>。</p>
+<h4 id="custom_dir">custom_dir</h4>
+<p>包含自定义主题的目录。它可以是相对目录，在这种情况下，它将相对于包含您的配置文件的目录解析，也可以是本地文件系统根目录的绝对目录路径。</p>
+<p>如果您想调整现有主题，请参阅<a href="https://mkdocs.cn/user-guide/customizing-your-theme/#using-the-theme-custom_dir">自定义您的主题</a>了解详细信息。</p>
+<p>如果您想从头开始构建自己的主题，请参阅<a href="https://mkdocs.cn/dev-guide/themes/">主题开发人员指南</a>。</p>
+<h4 id="static_templates">static_templates</h4>
+<p>要渲染为静态页面的模板列表。这些模板必须位于主题的模板目录或主题配置中定义的<code>custom_dir</code>中。</p>
+<h4 id="_8">（主题特定关键字）</h4>
+<p>主题支持的任何其他关键字也可以定义。有关详细信息，请参阅您正在使用的主题的文档。</p>
+<p><strong>默认值</strong>：<code>'mkdocs'</code></p>
+<h3 id="docs_dir">docs_dir</h3>
+<p>包含文档源 Markdown 文件的目录。它可以是相对目录，在这种情况下，它将相对于包含您的配置文件的目录解析，也可以是本地文件系统根目录的绝对目录路径。</p>
+<p><strong>默认值</strong>：<code>'docs'</code></p>
+<h3 id="site_dir">site_dir</h3>
+<p>创建输出 HTML 和其他文件的目录。它可以是相对目录，在这种情况下，它将相对于包含您的配置文件的目录解析，也可以是本地文件系统根目录的绝对目录路径。</p>
+<p><strong>默认值</strong>：<code>'site'</code></p>
+<p>注意</p>
+<p>如果您正在使用源代码控制，您通常需要确保您的_构建输出_文件不会被提交到存储库中，并且只保留存储库中的_源_文件。例如，如果使用<code>git</code>，您可以在<code>.gitignore</code>文件中添加以下行</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>site/
+</span></code></pre></div>
+<p>如果您正在使用其他源代码控制工具，您需要查看其文档，了解如何忽略特定目录。</p>
+<p>设置要由主题包含的 CSS 文件列表（相对于<code>docs_dir</code>），通常以<code>&lt;link&gt;</code>标签的形式。</p>
+<p>示例</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>extra_css:
+</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="w">  </span>-<span class="w"> </span>css/extra.css
+</span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a><span class="w">  </span>-<span class="w"> </span>css/second_extra.css
+</span></code></pre></div>
+<p><strong>默认值</strong>：<code>[]</code>（空列表）。</p>
+<p>设置<code>docs_dir</code>中的 JavaScript 文件列表，要由主题包含，以<code>&lt;script&gt;</code>标签的形式。</p>
+<p>在版本 1.5 中更改</p>
+<p>旧版本的 MkDocs 仅支持简单的字符串列表，但现在可以使用几个其他配置键：<code>type</code>、<code>async</code>、<code>defer</code>。</p>
+<p>查看示例以及它们生成的输出</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>extra_javascript:
+</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="w">  </span>-<span class="w"> </span>some_plain_javascript.js<span class="w">       </span>
+</span><span id="__span-25-3"><a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a>
+</span><span id="__span-25-4"><a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a><span class="w">  </span>-<span class="w"> </span>implicitly_as_module.mjs<span class="w">       </span>
+</span><span id="__span-25-5"><a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a>
+</span><span id="__span-25-6"><a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a><span class="w">  </span>-<span class="w"> </span>path:<span class="w"> </span>explicitly_as_module.mjs<span class="w"> </span>
+</span><span id="__span-25-7"><a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a><span class="w">    </span>type:<span class="w"> </span>module
+</span><span id="__span-25-8"><a id="__codelineno-25-8" name="__codelineno-25-8" href="#__codelineno-25-8"></a><span class="w">  </span>-<span class="w"> </span>path:<span class="w"> </span>deferred_plain.js<span class="w">        </span>
+</span><span id="__span-25-9"><a id="__codelineno-25-9" name="__codelineno-25-9" href="#__codelineno-25-9"></a><span class="w">    </span>defer:<span class="w"> </span><span class="nb">true</span>
+</span><span id="__span-25-10"><a id="__codelineno-25-10" name="__codelineno-25-10" href="#__codelineno-25-10"></a><span class="w">  </span>-<span class="w"> </span>path:<span class="w"> </span>scripts/async_module.mjs<span class="w"> </span>
+</span><span id="__span-25-11"><a id="__codelineno-25-11" name="__codelineno-25-11" href="#__codelineno-25-11"></a><span class="w">    </span>type:<span class="w"> </span>module
+</span><span id="__span-25-12"><a id="__codelineno-25-12" name="__codelineno-25-12" href="#__codelineno-25-12"></a><span class="w">    </span>async:<span class="w"> </span><span class="nb">true</span>
+</span></code></pre></div>
+<p>因此，每个项目都可以是</p>
+<ul>
+<li>一个简单的字符串，或者</li>
+<li>一个映射，它包含必需的<code>path</code>键和 3 个可选键<code>type</code>（字符串）、<code>async</code>（布尔值）、<code>defer</code>（布尔值）。</li>
+</ul>
+<p>只有简单的字符串变体检测到<code>.mjs</code>扩展名并添加<code>type="module"</code>，否则无论扩展名是什么，都必须写出<code>type: module</code>。</p>
+<p><strong>默认值</strong>：<code>[]</code>（空列表）。</p>
+<p>注意</p>
+<p><code>*.js</code>和<code>*.css</code>文件，就像其他类型的文件一样，始终从<code>docs_dir</code>复制到站点的部署副本中，无论它们是否通过上述配置链接到页面。</p>
+<p>设置<code>docs_dir</code>中的模板列表，要由 MkDocs 构建。要了解有关为 MkDocs 编写模板的更多信息，请阅读有关<a href="https://mkdocs.cn/dev-guide/themes/">自定义主题</a>的文档，特别是有关<a href="https://mkdocs.cn/dev-guide/themes/#template-variables">模板可用变量</a>的部分。查看<a href="#extra_css">extra_css</a>中的示例以了解用法。</p>
+<p><strong>默认值</strong>：<code>[]</code>（空列表）。</p>
+<p>一组键值对，其中值可以是任何有效的 YAML 结构，这些结构将传递给模板。这在创建自定义主题时提供了极大的灵活性。</p>
+<p>例如，如果您正在使用支持显示项目版本的主题，您可以像这样将其传递给主题</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>extra:
+</span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="w">  </span>version:<span class="w"> </span><span class="m">1</span>.0
+</span></code></pre></div>
+<p><strong>默认值</strong>：默认情况下，<code>extra</code>将是一个空的键值映射。</p>
+<h2 id="_9">预览控件</h2>
+<h2 id="_10">实时重新加载</h2>
+<h3 id="watch">watch</h3>
+<p>确定在运行<code>mkdocs serve</code>时要监视的其他目录。配置是一个 YAML 列表。</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>watch:
+</span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="w">  </span>-<span class="w"> </span>directory_a
+</span><span id="__span-27-3"><a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a><span class="w">  </span>-<span class="w"> </span>directory_b
+</span></code></pre></div>
+<p>允许设置自定义默认值，而无需每次调用<code>mkdocs serve</code>命令时都通过<code>-w</code>/<code>--watch</code>选项传递它。</p>
+<p>注意</p>
+<p>配置文件中提供的路径相对于配置文件。</p>
+<p>通过<code>-w</code>/<code>--watch</code> CLI 参数提供的路径则不是。</p>
+<h3 id="use_directory_urls">use_directory_urls</h3>
+<p>此设置控制生成的文档的目录结构，从而控制用于链接到页面的 URL 格式。</p>
+<p>以下表格展示了在将<code>use_directory_urls</code>设置为<code>true</code>或<code>false</code>时，站点上使用的目录结构和 URL 如何不同。</p>
+<p><strong><code>use_directory_urls: false</code></strong></p>
+<p>当文档托管在无法访问文件<code>X/index.html</code>（当给出 URL<code>X</code>时）的系统上时，需要此设置。当设置为<code>false</code>时，不会创建额外的<code>X</code>目录，该文件将简单地存储为<code>X.html</code>。创建的链接直接指向目标_文件_，而不是目标_目录_。</p>
+<table>
+<thead>
+<tr>
+<th>源文件</th>
+<th>生成的 文件</th>
+<th>URL 格式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>index.md</td>
+<td>index.html</td>
+<td>/index.html</td>
+</tr>
+<tr>
+<td>api-guide.md</td>
+<td>api-guide.html</td>
+<td>/api-guide.html</td>
+</tr>
+<tr>
+<td>about/license.md</td>
+<td>about/license.html</td>
+<td>/about/license.html</td>
+</tr>
+</tbody>
+</table>
+<p>例如，当以下情况发生时，需要将其设置为<code>false</code></p>
+<ul>
+<li>直接从文件系统打开页面</li>
+<li>将文档发布到静态 S3 网站。</li>
+</ul>
+<p><strong><code>use_directory_urls: true</code></strong></p>
+<p><code>use_directory_urls: true</code>的默认样式会创建更友好的 URL，通常是您想要使用的样式。</p>
+<table>
+<thead>
+<tr>
+<th>源文件</th>
+<th>生成的 文件</th>
+<th>URL 格式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>index.md</td>
+<td>/index.html</td>
+<td>/</td>
+</tr>
+<tr>
+<td>api-guide.md</td>
+<td>/api-guide/index.html</td>
+<td>/api-guide/</td>
+</tr>
+<tr>
+<td>about/license.md</td>
+<td>/about/license/index.html</td>
+<td>/about/license</td>
+</tr>
+</tbody>
+</table>
+<p><strong>默认值</strong>：<code>true</code></p>
+<h3 id="strict">strict</h3>
+<p>确定如何处理警告。设置为<code>true</code>表示在出现警告时停止处理。设置为<code>false</code>表示打印警告并继续处理。</p>
+<p>它也可以作为命令行标志使用：<code>--strict</code>。</p>
+<p><strong>默认值</strong>：<code>false</code></p>
+<h3 id="dev_addr">dev_addr</h3>
+<p>确定在运行<code>mkdocs serve</code>时使用的地址。必须为<code>IP:PORT</code>格式。</p>
+<p>允许设置自定义默认值，而无需每次调用<code>mkdocs serve</code>命令时都通过<code>--dev-addr</code>选项传递它。</p>
+<p><strong>默认值</strong>：<code>'127.0.0.1:8000'</code></p>
+<p>另请参阅：<a href="#site_url">site_url</a>。</p>
+<h2 id="_11">格式选项</h2>
+<h3 id="markdown_extensions">markdown_extensions</h3>
+<p>MkDocs 使用 <a href="https://python-markdown.github.io/">Python Markdown</a> 库将 Markdown 文件转换为 HTML。Python Markdown 支持各种 <a href="https://python-markdown.github.io/extensions/">扩展</a>，这些扩展自定义页面格式化方式。此设置允许您启用除 MkDocs 默认使用的扩展（<code>meta</code>、<code>toc</code>、<code>tables</code> 和 <code>fenced_code</code>）之外的扩展列表。</p>
+<p>例如，要启用 <a href="https://python-markdown.github.io/extensions/smarty/">SmartyPants 排版扩展</a>，请使用</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>markdown_extensions:
+</span><span id="__span-28-2"><a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a><span class="w">  </span>-<span class="w"> </span>smarty
+</span></code></pre></div>
+<p>一些扩展提供自己的配置选项。如果您想设置任何配置选项，那么您可以嵌套一个键值映射（<code>option_name: option value</code>），其中包含任何给定扩展支持的选项。请参阅您正在使用的扩展的文档以确定它们支持哪些选项。</p>
+<p>例如，要在（包含的）<code>toc</code> 扩展中启用永久链接，请使用</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>markdown_extensions:
+</span><span id="__span-29-2"><a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a><span class="w">  </span>-<span class="w"> </span>toc:
+</span><span id="__span-29-3"><a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a><span class="w">      </span>permalink:<span class="w"> </span><span class="nb">true</span>
+</span></code></pre></div>
+<p>请注意，冒号（<code>:</code>）必须跟随扩展名（<code>toc</code>），然后在新行上，选项名和值必须缩进并用冒号分隔。如果您想为单个扩展定义多个选项，则每个选项都必须定义在单独的行上</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>markdown_extensions:
+</span><span id="__span-30-2"><a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a><span class="w">  </span>-<span class="w"> </span>toc:
+</span><span id="__span-30-3"><a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a><span class="w">      </span>permalink:<span class="w"> </span><span class="nb">true</span>
+</span><span id="__span-30-4"><a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a><span class="w">      </span>separator:<span class="w"> </span><span class="s2">"_"</span>
+</span></code></pre></div>
+<p>为每个扩展添加一个额外的列表项。如果您没有为特定扩展设置配置选项，则只需省略该扩展的选项</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>markdown_extensions:
+</span><span id="__span-31-2"><a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a><span class="w">  </span>-<span class="w"> </span>smarty
+</span><span id="__span-31-3"><a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a><span class="w">  </span>-<span class="w"> </span>toc:
+</span><span id="__span-31-4"><a id="__codelineno-31-4" name="__codelineno-31-4" href="#__codelineno-31-4"></a><span class="w">      </span>permalink:<span class="w"> </span><span class="nb">true</span>
+</span><span id="__span-31-5"><a id="__codelineno-31-5" name="__codelineno-31-5" href="#__codelineno-31-5"></a><span class="w">  </span>-<span class="w"> </span>sane_lists
+</span></code></pre></div>
+<p>动态配置值</p>
+<p>要动态配置扩展，您可以从 <a href="#environment-variables">环境变量</a> 或 <a href="#paths-relative-to-the-current-file-or-site">获取路径</a> 当前渲染的 Markdown 文件或整个 MkDocs 站点。</p>
+<p>在上面的示例中，每个扩展都是一个列表项（以 <code>-</code> 开头）。作为替代方案，可以使用键值对。但是，在这种情况下，必须为没有定义选项的扩展提供空值。因此，上面的最后一个示例也可以定义如下</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a>markdown_extensions:
+</span><span id="__span-32-2"><a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a><span class="w">  </span>smarty:<span class="w"> </span><span class="o">{}</span>
+</span><span id="__span-32-3"><a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a><span class="w">  </span>toc:
+</span><span id="__span-32-4"><a id="__codelineno-32-4" name="__codelineno-32-4" href="#__codelineno-32-4"></a><span class="w">    </span>permalink:<span class="w"> </span><span class="nb">true</span>
+</span><span id="__span-32-5"><a id="__codelineno-32-5" name="__codelineno-32-5" href="#__codelineno-32-5"></a><span class="w">  </span>sane_lists:<span class="w"> </span><span class="o">{}</span>
+</span></code></pre></div>
+<p>如果您打算通过 <a href="#configuration-inheritance">继承</a> 覆盖某些选项，则需要使用这种替代语法。</p>
+<p><strong>默认值</strong>：<code>[]</code>（空列表）。</p>
+<h3 id="hooks">hooks</h3>
+<p>1.4 版本新增</p>
+<p>一个指向 Python 脚本的路径列表（相对于 <code>mkdocs.yml</code>），这些脚本将被加载并用作 <a href="#plugins">插件</a> 实例。</p>
+<p>例如</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a>hooks:
+</span><span id="__span-33-2"><a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a><span class="w">  </span>-<span class="w"> </span>my_hooks.py
+</span></code></pre></div>
+<p>然后文件 <code>my_hooks.py</code> 可以包含任何 <a href="https://mkdocs.cn/dev-guide/plugins/#events">插件事件处理程序</a>（不带 <code>self</code>），例如</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a>def<span class="w"> </span>on_page_markdown<span class="o">(</span>markdown,<span class="w"> </span>**kwargs<span class="o">)</span>:
+</span><span id="__span-34-2"><a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span>markdown.replace<span class="o">(</span><span class="s1">'a'</span>,<span class="w"> </span><span class="s1">'z'</span><span class="o">)</span>
+</span></code></pre></div>
+<p>高级示例</p>
+<p>这将根据 Markdown 内容生成警告（并且警告在 <a href="#strict">严格</a> 模式下是致命的）</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-35-1"><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a>import<span class="w"> </span>logging,<span class="w"> </span>re
+</span><span id="__span-35-2"><a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a>import<span class="w"> </span>mkdocs.plugins
+</span><span id="__span-35-3"><a id="__codelineno-35-3" name="__codelineno-35-3" href="#__codelineno-35-3"></a>
+</span><span id="__span-35-4"><a id="__codelineno-35-4" name="__codelineno-35-4" href="#__codelineno-35-4"></a><span class="nv">log</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>logging.getLogger<span class="o">(</span><span class="s1">'mkdocs'</span><span class="o">)</span>
+</span><span id="__span-35-5"><a id="__codelineno-35-5" name="__codelineno-35-5" href="#__codelineno-35-5"></a>
+</span><span id="__span-35-6"><a id="__codelineno-35-6" name="__codelineno-35-6" href="#__codelineno-35-6"></a>@mkdocs.plugins.event_priority<span class="o">(</span>-50<span class="o">)</span>
+</span><span id="__span-35-7"><a id="__codelineno-35-7" name="__codelineno-35-7" href="#__codelineno-35-7"></a>def<span class="w"> </span>on_page_markdown<span class="o">(</span>markdown,<span class="w"> </span>page,<span class="w"> </span>**kwargs<span class="o">)</span>:
+</span><span id="__span-35-8"><a id="__codelineno-35-8" name="__codelineno-35-8" href="#__codelineno-35-8"></a><span class="w">    </span><span class="nv">path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>page.file.src_uri
+</span><span id="__span-35-9"><a id="__codelineno-35-9" name="__codelineno-35-9" href="#__codelineno-35-9"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span>m<span class="w"> </span><span class="k">in</span><span class="w"> </span>re.finditer<span class="o">(</span>r<span class="s1">'\bhttp://[^) ]+'</span>,<span class="w"> </span>markdown<span class="o">)</span>:
+</span><span id="__span-35-10"><a id="__codelineno-35-10" name="__codelineno-35-10" href="#__codelineno-35-10"></a><span class="w">        </span>log.warning<span class="o">(</span>f<span class="s2">"Documentation file '{path}' contains a non-HTTPS link: {m[0]}"</span><span class="o">)</span>
+</span></code></pre></div>
+<p>与 <a href="https://mkdocs.cn/dev-guide/plugins/">插件</a> 相比，这不会启用任何新功能，它只是简化了一次性使用，因为它们不需要像插件那样_安装_。</p>
+<p>请注意，对于 <code>mkdocs serve</code>，钩子模块_不会_在每次构建时重新加载。</p>
+<p>您可能已经在 <a href="https://github.com/aklajnert/mkdocs-simple-hooks">mkdocs-simple-hooks 插件</a> 中看到过此功能。如果使用标准方法名，它可以直接替换，例如</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-36-1"><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a>-plugins:
+</span><span id="__span-36-2"><a id="__codelineno-36-2" name="__codelineno-36-2" href="#__codelineno-36-2"></a>-<span class="w">  </span>-<span class="w"> </span>mkdocs-simple-hooks:
+</span><span id="__span-36-3"><a id="__codelineno-36-3" name="__codelineno-36-3" href="#__codelineno-36-3"></a>-<span class="w">      </span>hooks:
+</span><span id="__span-36-4"><a id="__codelineno-36-4" name="__codelineno-36-4" href="#__codelineno-36-4"></a>-<span class="w">        </span>on_page_markdown:<span class="w"> </span><span class="s1">'my_hooks:on_page_markdown'</span>
+</span><span id="__span-36-5"><a id="__codelineno-36-5" name="__codelineno-36-5" href="#__codelineno-36-5"></a>+hooks:
+</span><span id="__span-36-6"><a id="__codelineno-36-6" name="__codelineno-36-6" href="#__codelineno-36-6"></a>+<span class="w">  </span>-<span class="w"> </span>my_hooks.py
+</span></code></pre></div>
+<p>MkDocs 1.6 版本新增</p>
+<p>如果钩子文件在其旁边有一个文件 <code>foo.py</code>，它可以使用正常的 Python 语法 <code>import foo</code> 来访问其函数。</p>
+<p>在旧版本的 MkDocs 中，需要一个解决方法才能使其正常工作 - 将路径添加到 <code>sys.path</code>。</p>
+<h3 id="plugins">plugins</h3>
+<p>一个插件列表（带有可选的配置设置），用于在构建站点时使用。有关完整详细信息，请参阅 <a href="https://mkdocs.cn/dev-guide/plugins/">插件</a> 文档。</p>
+<p><strong>默认值</strong>：<code>['search']</code>（与 MkDocs 捆绑的“search”插件）。</p>
+<p>如果 <code>plugins</code> 配置设置在 <code>mkdocs.yml</code> 配置文件中定义，则任何默认值（例如 <code>search</code>）都会被忽略，并且如果您想继续使用它们，则需要显式重新启用默认值</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-37-1"><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a>plugins:
+</span><span id="__span-37-2"><a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a><span class="w">  </span>-<span class="w"> </span>search
+</span><span id="__span-37-3"><a id="__codelineno-37-3" name="__codelineno-37-3" href="#__codelineno-37-3"></a><span class="w">  </span>-<span class="w"> </span>your_other_plugin
+</span></code></pre></div>
+<p>要定义给定插件的选项，请使用嵌套的键值对</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-38-1"><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a>plugins:
+</span><span id="__span-38-2"><a id="__codelineno-38-2" name="__codelineno-38-2" href="#__codelineno-38-2"></a><span class="w">  </span>-<span class="w"> </span>search
+</span><span id="__span-38-3"><a id="__codelineno-38-3" name="__codelineno-38-3" href="#__codelineno-38-3"></a><span class="w">  </span>-<span class="w"> </span>your_other_plugin:
+</span><span id="__span-38-4"><a id="__codelineno-38-4" name="__codelineno-38-4" href="#__codelineno-38-4"></a><span class="w">      </span>option1:<span class="w"> </span>value
+</span><span id="__span-38-5"><a id="__codelineno-38-5" name="__codelineno-38-5" href="#__codelineno-38-5"></a><span class="w">      </span>option2:<span class="w"> </span>other<span class="w"> </span>value
+</span></code></pre></div>
+<p>要完全禁用所有插件（包括任何默认值），请将 <code>plugins</code> 设置设置为一个空列表</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-39-1"><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a>plugins:<span class="w"> </span><span class="o">[]</span>
+</span></code></pre></div>
+<h4 id="enabled"><code>enabled</code> 选项</h4>
+<p>MkDocs 1.6 版本新增</p>
+<p>每个插件都有自己的选项键。但是，MkDocs 还会确保每个插件都具有 <code>enabled</code> 布尔选项。这可以用来有条件地启用特定插件，如以下示例所示</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-40-1"><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a>plugins:
+</span><span id="__span-40-2"><a id="__codelineno-40-2" name="__codelineno-40-2" href="#__codelineno-40-2"></a><span class="w">  </span>-<span class="w"> </span>search
+</span><span id="__span-40-3"><a id="__codelineno-40-3" name="__codelineno-40-3" href="#__codelineno-40-3"></a><span class="w">  </span>-<span class="w"> </span>code-validator:
+</span><span id="__span-40-4"><a id="__codelineno-40-4" name="__codelineno-40-4" href="#__codelineno-40-4"></a><span class="w">      </span>enabled:<span class="w"> </span>!ENV<span class="w"> </span><span class="o">[</span>LINT,<span class="w"> </span>false<span class="o">]</span>
+</span></code></pre></div>
+<p>请参阅：<a href="#environment-variables">环境变量</a></p>
+<h4 id="_12">替代语法</h4>
+<p>在上面的示例中，每个插件都是一个列表项（以 <code>-</code> 开头）。作为替代方案，可以使用键值对。但是，在这种情况下，必须为没有定义选项的插件提供空值。因此，上面的最后一个示例也可以定义如下</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-41-1"><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a>plugins:
+</span><span id="__span-41-2"><a id="__codelineno-41-2" name="__codelineno-41-2" href="#__codelineno-41-2"></a><span class="w">  </span>search:<span class="w"> </span><span class="o">{}</span>
+</span><span id="__span-41-3"><a id="__codelineno-41-3" name="__codelineno-41-3" href="#__codelineno-41-3"></a><span class="w">  </span>your_other_plugin:
+</span><span id="__span-41-4"><a id="__codelineno-41-4" name="__codelineno-41-4" href="#__codelineno-41-4"></a><span class="w">    </span>option1:<span class="w"> </span>value
+</span><span id="__span-41-5"><a id="__codelineno-41-5" name="__codelineno-41-5" href="#__codelineno-41-5"></a><span class="w">    </span>option2:<span class="w"> </span>other<span class="w"> </span>value
+</span></code></pre></div>
+<p>如果您打算通过 <a href="#configuration-inheritance">继承</a> 覆盖某些选项，则需要使用这种替代语法。</p>
+<h4 id="search">Search</h4>
+<p>MkDocs 默认提供了一个搜索插件，该插件使用 <a href="https://lunrjs.com/">lunr.js</a> 作为搜索引擎。以下配置选项可用于更改搜索插件的行为</p>
+<h5 id="separator"><strong>separator</strong></h5>
+<p>一个正则表达式，它匹配用于构建索引的单词分隔符字符。默认情况下，使用空格和连字符（<code>-</code>）。要添加点（<code>.</code>）作为单词分隔符，您可以执行以下操作</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-42-1"><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a>plugins:
+</span><span id="__span-42-2"><a id="__codelineno-42-2" name="__codelineno-42-2" href="#__codelineno-42-2"></a><span class="w">  </span>-<span class="w"> </span>search:
+</span><span id="__span-42-3"><a id="__codelineno-42-3" name="__codelineno-42-3" href="#__codelineno-42-3"></a><span class="w">      </span>separator:<span class="w"> </span><span class="s1">'[\s\-\.]+'</span>
+</span></code></pre></div>
+<p><strong>默认值</strong>：<code>'[\s\-]+'</code></p>
+<h5 id="min_search_length"><strong>min_search_length</strong></h5>
+<p>一个整数值，用于定义搜索查询的最小长度。默认情况下，忽略长度小于 3 个字符的搜索，因为使用短搜索词的搜索结果质量很差。但是，对于某些用例（例如有关消息队列的文档，这些文档可能会生成对“MQ”的搜索），您可能更愿意设置更短的限制。</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-43-1"><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a>plugins:
+</span><span id="__span-43-2"><a id="__codelineno-43-2" name="__codelineno-43-2" href="#__codelineno-43-2"></a><span class="w">  </span>-<span class="w"> </span>search:
+</span><span id="__span-43-3"><a id="__codelineno-43-3" name="__codelineno-43-3" href="#__codelineno-43-3"></a><span class="w">      </span>min_search_length:<span class="w"> </span><span class="m">2</span>
+</span></code></pre></div>
+<p><strong>默认值</strong>: 3</p>
+<h5 id="lang"><strong>lang</strong></h5>
+<p>一个语言列表，用于构建搜索索引，这些语言由其 <a href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes">ISO 639-1</a> 语言代码标识。使用 <a href="https://github.com/MihaiValentin/lunr-languages#lunr-languages-----">Lunr 语言</a>，支持以下语言</p>
+<ul>
+<li><code>ar</code>：阿拉伯语</li>
+<li><code>da</code>：丹麦语</li>
+<li><code>nl</code>：荷兰语</li>
+<li><code>en</code>：英语</li>
+<li><code>fi</code>：芬兰语</li>
+<li><code>fr</code>：法语</li>
+<li><code>de</code>：德语</li>
+<li><code>hu</code>：匈牙利语</li>
+<li><code>it</code>：意大利语</li>
+<li><code>ja</code>：日语</li>
+<li><code>no</code>：挪威语</li>
+<li><code>pt</code>：葡萄牙语</li>
+<li><code>ro</code>：罗马尼亚语</li>
+<li><code>ru</code>：俄语</li>
+<li><code>es</code>：西班牙语</li>
+<li><code>sv</code>：瑞典语</li>
+<li><code>th</code>：泰语</li>
+<li><code>tr</code>：土耳其语</li>
+<li><code>vi</code>：越南语</li>
+</ul>
+<p>您可以 <a href="https://github.com/MihaiValentin/lunr-languages/blob/master/CONTRIBUTING.md">贡献其他语言</a>。</p>
+<p>警告</p>
+<p>虽然搜索支持一起使用多种语言，但最好不要添加其他语言，除非您确实需要它们。每添加一种语言都会增加带宽要求，并使用更多浏览器资源。通常，最好将每个 MkDocs 实例保留为单一语言。</p>
+<p>注意</p>
+<p>Lunr 语言目前不包含对中文或其他亚洲语言的支持。但是，一些用户报告说使用日语获得了不错的效果。</p>
+<p><strong>默认值</strong>：如果设置了 <code>theme.locale</code> 的值，则为该值，否则为 <code>[en]</code>。</p>
+<h5 id="prebuild_index"><strong>prebuild_index</strong></h5>
+<p>可以选择生成所有页面的预构建索引，这将为较大的站点提供一些性能改进。在启用之前，请确认您正在使用的主题明确支持使用预构建索引（内置主题支持）。设置为 <code>true</code> 以启用。</p>
+<p>警告</p>
+<p>此选项要求安装 <a href="https://node.org.cn/">Node.js</a> 并且命令 <code>node</code> 位于系统路径上。如果由于任何原因，对 <code>node</code> 的调用失败，则会发出警告，并且构建会继续进行，不会中断。您可以在构建时使用 <code>--strict</code> 标志，使这种故障引发错误而不是发出警告。</p>
+<p>注意</p>
+<p>在较小的站点上，不建议使用预构建索引，因为它会显著增加带宽要求，而不会对您的用户造成明显的改善。但是，对于较大的站点（数百个页面），带宽增加相对较小，您的用户会注意到搜索性能的显著提高。</p>
+<p><strong>默认值</strong>：<code>False</code></p>
+<h5 id="indexing"><strong>indexing</strong></h5>
+<p>配置搜索索引器在构建页面索引时将使用的策略。如果您项目的规模很大，并且索引占用了大量的磁盘空间，此属性尤其有用。</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-44-1"><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a>plugins:
+</span><span id="__span-44-2"><a id="__codelineno-44-2" name="__codelineno-44-2" href="#__codelineno-44-2"></a><span class="w">  </span>-<span class="w"> </span>search:
+</span><span id="__span-44-3"><a id="__codelineno-44-3" name="__codelineno-44-3" href="#__codelineno-44-3"></a><span class="w">      </span>indexing:<span class="w"> </span><span class="s1">'full'</span>
+</span></code></pre></div>
+<h6 id="_13">选项</h6>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>full</code></td>
+<td>索引每个页面的标题、章节标题和全文。</td>
+</tr>
+<tr>
+<td><code>sections</code></td>
+<td>索引每个页面的标题和章节标题。</td>
+</tr>
+<tr>
+<td><code>titles</code></td>
+<td>仅索引每个页面的标题。</td>
+</tr>
+</tbody>
+</table>
+<p><strong>默认值</strong>：<code>full</code></p>
+<h3 id="_14">环境变量</h3>
+<p>在大多数情况下，配置选项的值直接在配置文件中设置。但是，作为一种选择，配置选项的值可以设置为环境变量的值，使用 <code>!ENV</code> 标签。例如，要将 <code>site_name</code> 选项的值设置为变量 <code>SITE_NAME</code> 的值，YAML 文件可以包含以下内容</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-45-1"><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a>site_name:<span class="w"> </span>!ENV<span class="w"> </span>SITE_NAME
+</span></code></pre></div>
+<p>如果环境变量未定义，则配置设置将被分配一个 <code>null</code>（或 Python 中的 <code>None</code>）值。可以将默认值定义为列表中的最后一个值。像这样</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-46-1"><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a>site_name:<span class="w"> </span>!ENV<span class="w"> </span><span class="o">[</span>SITE_NAME,<span class="w"> </span><span class="s1">'My default site name'</span><span class="o">]</span>
+</span></code></pre></div>
+<p>也可以使用多个后备变量。请注意，最后一个值不是环境变量，而必须是作为默认值使用的值，如果未定义任何指定的环境变量，则使用该值。</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-47-1"><a id="__codelineno-47-1" name="__codelineno-47-1" href="#__codelineno-47-1"></a>site_name:<span class="w"> </span>!ENV<span class="w"> </span><span class="o">[</span>SITE_NAME,<span class="w"> </span>OTHER_NAME,<span class="w"> </span><span class="s1">'My default site name'</span><span class="o">]</span>
+</span></code></pre></div>
+<p>在环境变量中定义的简单类型，例如字符串、布尔值、整数、浮点数、日期戳和空值，将被解析，就好像它们直接在 YAML 文件中定义一样，这意味着该值将被转换为适当的类型。但是，复杂类型，例如列表和键值对，不能在单个环境变量中定义。</p>
+<p>有关更多详细信息，请参阅 <a href="https://github.com/waylan/pyyaml-env-tag">pyyaml_env_tag</a> 项目。</p>
+<h3 id="_15">相对于当前文件或站点的路径</h3>
+<p>1.5 版新增</p>
+<p>某些 Markdown 扩展可能会从了解当前正在处理的 Markdown 文件的路径或当前站点的根路径中受益。为此，特殊标签 `!relative` 可用于配置文件中的大多数上下文中，尽管唯一已知的用例是在 <a href="#markdown_extensions"><code>markdown_extensions</code></a> 中。</p>
+<p>以下是可能值的示例</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-48-1"><a id="__codelineno-48-1" name="__codelineno-48-1" href="#__codelineno-48-1"></a>-<span class="w"> </span>!relative<span class="w">  </span>
+</span><span id="__span-48-2"><a id="__codelineno-48-2" name="__codelineno-48-2" href="#__codelineno-48-2"></a>-<span class="w"> </span>!relative<span class="w"> </span><span class="nv">$docs_dir</span><span class="w">  </span>
+</span><span id="__span-48-3"><a id="__codelineno-48-3" name="__codelineno-48-3" href="#__codelineno-48-3"></a>-<span class="w"> </span>!relative<span class="w"> </span><span class="nv">$config_dir</span><span class="w">  </span>
+</span><span id="__span-48-4"><a id="__codelineno-48-4" name="__codelineno-48-4" href="#__codelineno-48-4"></a>-<span class="w"> </span>!relative<span class="w"> </span><span class="nv">$config_dir</span>/some/child/dir<span class="w">  </span>
+</span></code></pre></div>
+<p>(此处，`$docs_dir` 和 `$config_dir` 是当前_唯一_识别的特殊前缀。)</p>
+<p>示例</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-49-1"><a id="__codelineno-49-1" name="__codelineno-49-1" href="#__codelineno-49-1"></a>markdown_extensions:
+</span><span id="__span-49-2"><a id="__codelineno-49-2" name="__codelineno-49-2" href="#__codelineno-49-2"></a><span class="w">  </span>-<span class="w"> </span>pymdownx.snippets:
+</span><span id="__span-49-3"><a id="__codelineno-49-3" name="__codelineno-49-3" href="#__codelineno-49-3"></a><span class="w">      </span>base_path:<span class="w"> </span>!relative<span class="w">  </span>
+</span></code></pre></div>
+<p>这允许 <a href="https://facelessuser.github.io/pymdown-extensions/extensions/snippets/">pymdownx.snippets</a> 扩展包含相对于当前 Markdown 文件的文件，而没有此标签，它将无法知道。</p>
+<p>注意</p>
+<p>即使是默认情况，任何扩展的基路径在技术上都是_当前工作目录_，尽管假设它是_mkdocs.yml 的目录_。所以，即使您不希望路径是相对路径，为了改善默认行为，始终建议使用此习惯用法</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-50-1"><a id="__codelineno-50-1" name="__codelineno-50-1" href="#__codelineno-50-1"></a>markdown_extensions:
+</span><span id="__span-50-2"><a id="__codelineno-50-2" name="__codelineno-50-2" href="#__codelineno-50-2"></a><span class="w">  </span>-<span class="w"> </span>pymdownx.snippets:
+</span><span id="__span-50-3"><a id="__codelineno-50-3" name="__codelineno-50-3" href="#__codelineno-50-3"></a><span class="w">      </span>base_path:<span class="w"> </span>!relative<span class="w"> </span><span class="nv">$config_dir</span><span class="w">  </span>
+</span></code></pre></div>
+<h2 id="_16">配置继承</h2>
+<p>通常，单个文件将保存站点的完整配置。但是，一些组织可能会维护多个站点，这些站点共享一个共同的配置。与其为每个站点维护单独的配置，不如在父配置文件中定义共同的配置选项，每个站点的主要配置文件都继承自该父配置文件。</p>
+<p>要定义配置文件的父级，请将 `INHERIT`（全部大写）键设置为父文件的路径。该路径必须相对于主要文件的路径。</p>
+<p>为了将配置选项与父配置合并，这些选项必须定义为键值对。具体来说，<a href="#markdown_extensions">markdown_extensions</a> 和 <a href="#plugins">plugins</a> 选项必须使用不使用列表项（以 `-` 开头的行）的替代语法。</p>
+<p>例如，假设公共（父）配置在 `base.yml` 中定义</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-51-1"><a id="__codelineno-51-1" name="__codelineno-51-1" href="#__codelineno-51-1"></a>theme:
+</span><span id="__span-51-2"><a id="__codelineno-51-2" name="__codelineno-51-2" href="#__codelineno-51-2"></a><span class="w">  </span>name:<span class="w"> </span>mkdocs
+</span><span id="__span-51-3"><a id="__codelineno-51-3" name="__codelineno-51-3" href="#__codelineno-51-3"></a><span class="w">  </span>locale:<span class="w"> </span>en
+</span><span id="__span-51-4"><a id="__codelineno-51-4" name="__codelineno-51-4" href="#__codelineno-51-4"></a><span class="w">  </span>highlightjs:<span class="w"> </span><span class="nb">true</span>
+</span><span id="__span-51-5"><a id="__codelineno-51-5" name="__codelineno-51-5" href="#__codelineno-51-5"></a>
+</span><span id="__span-51-6"><a id="__codelineno-51-6" name="__codelineno-51-6" href="#__codelineno-51-6"></a>markdown_extensions:
+</span><span id="__span-51-7"><a id="__codelineno-51-7" name="__codelineno-51-7" href="#__codelineno-51-7"></a><span class="w">  </span>toc:
+</span><span id="__span-51-8"><a id="__codelineno-51-8" name="__codelineno-51-8" href="#__codelineno-51-8"></a><span class="w">    </span>permalink:<span class="w"> </span><span class="nb">true</span>
+</span><span id="__span-51-9"><a id="__codelineno-51-9" name="__codelineno-51-9" href="#__codelineno-51-9"></a><span class="w">  </span>admonition:<span class="w"> </span><span class="o">{}</span>
+</span></code></pre></div>
+<p>然后，对于“foo”站点，主要配置文件将定义在 `foo/mkdocs.yml` 中</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-52-1"><a id="__codelineno-52-1" name="__codelineno-52-1" href="#__codelineno-52-1"></a>INHERIT:<span class="w"> </span>../base.yml
+</span><span id="__span-52-2"><a id="__codelineno-52-2" name="__codelineno-52-2" href="#__codelineno-52-2"></a>site_name:<span class="w"> </span>Foo<span class="w"> </span>Project
+</span><span id="__span-52-3"><a id="__codelineno-52-3" name="__codelineno-52-3" href="#__codelineno-52-3"></a>site_url:<span class="w"> </span>https://example.com/foo
+</span></code></pre></div>
+<p>在运行 `mkdocs build` 时，`foo/mkdocs.yml` 中的文件将作为配置文件传入。MkDocs 然后将解析该文件，检索并解析父文件 `base.yml`，并将这两个文件深度合并。这将导致 MkDocs 收到以下合并的配置</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-53-1"><a id="__codelineno-53-1" name="__codelineno-53-1" href="#__codelineno-53-1"></a>site_name:<span class="w"> </span>Foo<span class="w"> </span>Project
+</span><span id="__span-53-2"><a id="__codelineno-53-2" name="__codelineno-53-2" href="#__codelineno-53-2"></a>site_url:<span class="w"> </span>https://example.com/foo
+</span><span id="__span-53-3"><a id="__codelineno-53-3" name="__codelineno-53-3" href="#__codelineno-53-3"></a>
+</span><span id="__span-53-4"><a id="__codelineno-53-4" name="__codelineno-53-4" href="#__codelineno-53-4"></a>theme:
+</span><span id="__span-53-5"><a id="__codelineno-53-5" name="__codelineno-53-5" href="#__codelineno-53-5"></a><span class="w">  </span>name:<span class="w"> </span>mkdocs
+</span><span id="__span-53-6"><a id="__codelineno-53-6" name="__codelineno-53-6" href="#__codelineno-53-6"></a><span class="w">  </span>locale:<span class="w"> </span>en
+</span><span id="__span-53-7"><a id="__codelineno-53-7" name="__codelineno-53-7" href="#__codelineno-53-7"></a><span class="w">  </span>highlightjs:<span class="w"> </span><span class="nb">true</span>
+</span><span id="__span-53-8"><a id="__codelineno-53-8" name="__codelineno-53-8" href="#__codelineno-53-8"></a>
+</span><span id="__span-53-9"><a id="__codelineno-53-9" name="__codelineno-53-9" href="#__codelineno-53-9"></a>markdown_extensions:
+</span><span id="__span-53-10"><a id="__codelineno-53-10" name="__codelineno-53-10" href="#__codelineno-53-10"></a><span class="w">  </span>toc:
+</span><span id="__span-53-11"><a id="__codelineno-53-11" name="__codelineno-53-11" href="#__codelineno-53-11"></a><span class="w">    </span>permalink:<span class="w"> </span><span class="nb">true</span>
+</span><span id="__span-53-12"><a id="__codelineno-53-12" name="__codelineno-53-12" href="#__codelineno-53-12"></a><span class="w">  </span>admonition:<span class="w"> </span><span class="o">{}</span>
+</span></code></pre></div>
+<p>深度合并允许您在主要配置文件中添加和/或覆盖各种值。例如，假设对于一个站点，您想要添加对定义列表的支持，使用不同的符号作为永久链接，并定义不同的分隔符。在该站点的主要配置文件中，您可以执行以下操作</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-54-1"><a id="__codelineno-54-1" name="__codelineno-54-1" href="#__codelineno-54-1"></a>INHERIT:<span class="w"> </span>../base.yml
+</span><span id="__span-54-2"><a id="__codelineno-54-2" name="__codelineno-54-2" href="#__codelineno-54-2"></a>site_name:<span class="w"> </span>Bar<span class="w"> </span>Project
+</span><span id="__span-54-3"><a id="__codelineno-54-3" name="__codelineno-54-3" href="#__codelineno-54-3"></a>site_url:<span class="w"> </span>https://example.com/bar
+</span><span id="__span-54-4"><a id="__codelineno-54-4" name="__codelineno-54-4" href="#__codelineno-54-4"></a>
+</span><span id="__span-54-5"><a id="__codelineno-54-5" name="__codelineno-54-5" href="#__codelineno-54-5"></a>markdown_extensions:
+</span><span id="__span-54-6"><a id="__codelineno-54-6" name="__codelineno-54-6" href="#__codelineno-54-6"></a><span class="w">  </span>def_list:<span class="w"> </span><span class="o">{}</span>
+</span><span id="__span-54-7"><a id="__codelineno-54-7" name="__codelineno-54-7" href="#__codelineno-54-7"></a><span class="w">  </span>toc:
+</span><span id="__span-54-8"><a id="__codelineno-54-8" name="__codelineno-54-8" href="#__codelineno-54-8"></a><span class="w">    </span>permalink:<span class="w"> </span>
+</span><span id="__span-54-9"><a id="__codelineno-54-9" name="__codelineno-54-9" href="#__codelineno-54-9"></a><span class="w">    </span>separator:<span class="w"> </span><span class="s2">"_"</span>
+</span></code></pre></div>
+<p>在这种情况下，上面的配置将与 `base.yml` 深度合并，并生成以下配置</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-55-1"><a id="__codelineno-55-1" name="__codelineno-55-1" href="#__codelineno-55-1"></a>site_name:<span class="w"> </span>Bar<span class="w"> </span>Project
+</span><span id="__span-55-2"><a id="__codelineno-55-2" name="__codelineno-55-2" href="#__codelineno-55-2"></a>site_url:<span class="w"> </span>https://example.com/bar
+</span><span id="__span-55-3"><a id="__codelineno-55-3" name="__codelineno-55-3" href="#__codelineno-55-3"></a>
+</span><span id="__span-55-4"><a id="__codelineno-55-4" name="__codelineno-55-4" href="#__codelineno-55-4"></a>theme:
+</span><span id="__span-55-5"><a id="__codelineno-55-5" name="__codelineno-55-5" href="#__codelineno-55-5"></a><span class="w">  </span>name:<span class="w"> </span>mkdocs
+</span><span id="__span-55-6"><a id="__codelineno-55-6" name="__codelineno-55-6" href="#__codelineno-55-6"></a><span class="w">  </span>locale:<span class="w"> </span>en
+</span><span id="__span-55-7"><a id="__codelineno-55-7" name="__codelineno-55-7" href="#__codelineno-55-7"></a><span class="w">  </span>highlightjs:<span class="w"> </span><span class="nb">true</span>
+</span><span id="__span-55-8"><a id="__codelineno-55-8" name="__codelineno-55-8" href="#__codelineno-55-8"></a>
+</span><span id="__span-55-9"><a id="__codelineno-55-9" name="__codelineno-55-9" href="#__codelineno-55-9"></a>markdown_extensions:
+</span><span id="__span-55-10"><a id="__codelineno-55-10" name="__codelineno-55-10" href="#__codelineno-55-10"></a><span class="w">  </span>def_list:<span class="w"> </span><span class="o">{}</span>
+</span><span id="__span-55-11"><a id="__codelineno-55-11" name="__codelineno-55-11" href="#__codelineno-55-11"></a><span class="w">  </span>toc:
+</span><span id="__span-55-12"><a id="__codelineno-55-12" name="__codelineno-55-12" href="#__codelineno-55-12"></a><span class="w">    </span>permalink:<span class="w"> </span>
+</span><span id="__span-55-13"><a id="__codelineno-55-13" name="__codelineno-55-13" href="#__codelineno-55-13"></a><span class="w">    </span>separator:<span class="w"> </span><span class="s2">"_"</span>
+</span><span id="__span-55-14"><a id="__codelineno-55-14" name="__codelineno-55-14" href="#__codelineno-55-14"></a><span class="w">  </span>admonition:<span class="w"> </span><span class="o">{}</span>
+</span></code></pre></div>
+<p>注意，`admonition` 扩展是从父配置中保留的，`def_list` 扩展已添加，`toc.permalink` 的值已替换，`toc.separator` 的值已添加。</p>
+<p>您可以替换或合并任何键的值。但是，任何非键始终会被替换。因此，您无法将项目附加到列表。您必须重新定义整个列表。</p>
+<p>由于 <a href="#nav">nav</a> 配置由嵌套列表组成，这意味着您无法合并导航项。当然，您可以用新的配置替换整个 `nav` 配置。但是，通常期望整个导航将在项目的“主要配置文件”中定义。</p>
+<p>警告</p>
+<p>提醒一下，所有基于路径的配置选项必须相对于主要配置文件，MkDocs 在合并时不会更改路径。因此，在继承自多个不同站点的父文件中定义路径可能无法按预期工作。通常最好只在主要配置文件中定义基于路径的选项。</p>
+<p>继承也可以用作在命令行中快速覆盖键的方法 - 通过使用标准输入作为配置文件。例如</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-56-1"><a id="__codelineno-56-1" name="__codelineno-56-1" href="#__codelineno-56-1"></a><span class="nb">echo</span><span class="w"> </span><span class="s1">'{INHERIT: mkdocs.yml, site_name: "Renamed site"}'</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>mkdocs<span class="w"> </span>build<span class="w"> </span>-f<span class="w"> </span>-
+</span></code></pre></div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="页脚" >
+        
+          
+          <a href="../05%E4%B8%BB%E9%A2%98%E6%9C%AC%E5%9C%B0%E5%8C%96MkDocs%E6%96%87%E6%A1%A3/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 05主题本地化MkDocs文档">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              <div class="md-ellipsis">
+                05主题本地化MkDocs文档
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../07%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%95%8C%E9%9D%A2MkDocs%E6%96%87%E6%A1%A3/" class="md-footer__link md-footer__link--next" aria-label="下一页: 07命令行界面MkDocs文档">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              <div class="md-ellipsis">
+                07命令行界面MkDocs文档
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 - 2025 BeiJing
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.tracking", "navigation.footer", "content.code.select", "content.code.copy", "search.highlight"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
