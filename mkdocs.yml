@@ -15,8 +15,15 @@ nav:
   - a171232886/Note_Python: study/mkdocs_example.md
   - sre: sre/运维自动化之anbile.md
 - ebook:
-  - ebook1: ebook/ebook1.md
-  - ebook2: ebook/ebook2.md
+  -  command:
+      - linux命令大全: ebook/command/linuxcmd.md
+  -  program:
+      - 编程语言rust: ebook/program/program.md
+      - rust文档网: ebook/program/rustdocs.md
+  -  shell:
+      - powerShell7从入门到精通: ebook/shell/PowerShell7learn.md
+  -  tools:
+      - excel公式与函数帮助手册: ebook/tools/excelfn.md
 - devops:
   - devops1: devops/devops1.md
   - devops2: devops/devops2.md
