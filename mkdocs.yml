@@ -5,9 +5,10 @@ repo_name: a171232886/Note_Python
 repo_url: https://github.com/a171232886/Note_Python
 
 nav:
-- docker:
-  - k8saa: docker/k8s_docker1.md
-  - k8sbbb: docker/k8s_docker2.md
+- kubernetes:
+  - Kubernetes相关书籍及视频: kubernetes/kubernetes_ebook_video.md
+  - Docker相关书籍及视频: kubernetes/docker_ebook_video.md
+  - Kvm相关书籍及视频: kubernetes/kvm_ebook_video.md
 - study:
   - rust:
     - rust1: study/rust/rust1.md
@@ -39,6 +40,10 @@ nav:
   - devops2: devops/devops2.md
 - sre:
   - 运维自动化之anbile: sre/ansible/运维自动化之ansbile.md
+- python:
+  - 尚硅谷python: python/python.md
+- video:
+  - 尚硅谷视频: video/atguigu_video/atguigu_video.md
 theme:
   name: material
   # 图标设置
